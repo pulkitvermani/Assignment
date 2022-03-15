@@ -10,7 +10,6 @@ export default class ProductComponent extends LightningElement {
     @track activeProdPrice=0;
     @track deletedProducts=[];
     @track deletedProdPrice=0;
-    dt;
 
     @wire(returnProducts)
     products ({error, data}) {
@@ -41,6 +40,7 @@ export default class ProductComponent extends LightningElement {
         }
     }
 
+
     clickDelete(event){
         console.log('value in the clicked button target name ' , event.target.dataset.name);
         console.log('value in the clicked button target id ' , event.target.dataset.id);
@@ -58,6 +58,5 @@ export default class ProductComponent extends LightningElement {
         this.deletedProducts.splice(index,1);
         this.calculateSum();}
 
-    //dataArray= JSON.parse(this.productData);
    
 }
