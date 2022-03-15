@@ -1,15 +1,17 @@
 <template>
     <lightning-card title={label}>
-        <div >
+        <div class="slds-list_horizontal" >
             <div class="slds-m-around_large">
-            <table border="2">
+            <table class="slds-table_bordered">
                 <tbody>
-                    <tr>
-                        <th>Active</th>
-                    </tr>
+                        <tr>
+                            <th>Active</th>
+                        </tr>
                     <template if:true={activeProducts} for:each={activeProducts} for:item="item" for:index="index">
-                        <tr key={item.Id}>
+                        <tr key={item.Id} class="slds-m-around_large">
                             <td>Name: {item.Brand__c} {item.Name} {item.Model__c}<br/>Product type: {item.Type__c}<br/>Price: {item.Price__c}</td>
+                            
+                            
                             <td><lightning-button variant="brand" data-id={index} onclick={clickDelete} label="Remove"></lightning-button></td>
                         </tr>
                     </template>
@@ -18,7 +20,7 @@
             </table>
         </div>
         <div class="slds-m-around_large">
-            <table border ="2">
+            <table class="slds-table_bordered">
                 <tbody>
                     <tr>
                         <th>Deleted</th>
